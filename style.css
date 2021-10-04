@@ -1,0 +1,30 @@
+:root {
+    --grey: rgba(0, 0, 0, 0.3);
+    --text: rgb(44, 44, 44);
+}
+
+body {
+    background-color:aliceblue;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    font: 24px 'Times New Roman';
+}
+textarea {
+    padding: 10px;
+    border: solid 3px var(--grey);
+    font: 18px 'Times New Roman';
+    color: var(--text);
+    outline: none;
+    border-radius: 15px;
+}
+
+select {
+    padding: 10px;
+    font: 18px 'Times New Roman';   
+    border: solid 3px var(--grey);
+    border-radius: 8px;    
+}
