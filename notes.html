@@ -11,17 +11,19 @@
     <div class='container'>
         <p>To transform your tabs to other key enter your tabs here:</p>
         <textarea cols="30" rows="4"></textarea>
-        <p>P.S. You can write either "do" or "C", register doesn't matter </p>
+        <p>P.S. You can write either "do" or "C", register doesn't matter, enter keys WITHOUT any commas, just using space.
+            To specify tabs (sharp or flat) use "+" and "-".</p>
         <p>Now choose the origin key and to what key you want to change the melody</p>
         <span>from</span>
-        <select name="keyorigin" id="keyorigin">
-            <option value="C">C</option>
+        <select name="keyfrom" id="keyfrom">
+            <option value="c">C</option>
             <option value="g">G</option>
             <option value="d">D</option>
             <option value="a">A</option>
             <option value="e">E</option>
             <option value="b">B</option>
-            <option value="f#/g-">F#/G&#9837</option>
+            <option value="f+">F#</option>
+            <option value="g-">G&#9837</option>
             <option value="d-">D&#9837</option>
             <option value="a-">A&#9837</option>
             <option value="e-">E&#9837</option>
@@ -29,20 +31,24 @@
             <option value="f">F</option>
         </select>
         <span>to</span>
-        <select name="keyorigin" id="keyorigin">
-            <option value="C">C</option>
+        <select name="keyto" id="keyto">
+            <option value="c">C</option>
             <option value="g">G</option>
             <option value="d">D</option>
             <option value="a">A</option>
             <option value="e">E</option>
             <option value="b">B</option>
-            <option value="f#/g-">F#/G&#9837</option>
+            <option value="f+">F#</option>
+            <option value="g-">G&#9837</option>
             <option value="d-">D&#9837</option>
             <option value="a-">A&#9837</option>
             <option value="e-">E&#9837</option>
             <option value="b-">B&#9837</option>
             <option value="f">F</option>
-        </select>
+        </select><br>
+        <button id='convert'>Convert</button>
+        <p id='answer'>do re mi</p>
+        <button id="copybtn">Copy to cliboard</button>
     </div>
 
     <script src='app.js'></script>

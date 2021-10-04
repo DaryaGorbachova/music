@@ -1,6 +1,6 @@
 :root {
     --grey: rgba(0, 0, 0, 0.3);
-    --text: rgb(44, 44, 44);
+    --text: rgb(95, 95, 95);
 }
 
 body {
@@ -19,7 +19,14 @@ textarea {
     font: 18px 'Times New Roman';
     color: var(--text);
     outline: none;
-    border-radius: 15px;
+    border-radius: 12px;
+}
+
+#answer {
+    background-color: white;
+    max-width: 800px;
+    border: solid 3px var(--grey);
+    border-radius: 12px;
 }
 
 select {
@@ -27,4 +34,19 @@ select {
     font: 18px 'Times New Roman';   
     border: solid 3px var(--grey);
     border-radius: 8px;    
+    outline: none;
+}
+
+button {
+    margin: 32px;
+    background-color: azure;    
+    padding: 10px 30px;
+    font: bold 18px 'Times New Roman';  
+    color: var(--text);
+    border: solid 3px var(--grey);
+    border-radius: 25px; 
+}
+
+button:hover {
+    background-color: rgb(190, 236, 250);
 }
