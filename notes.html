@@ -4,50 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='icon' href='icon.png'>
+    <title>Tabs helper</title>
     <link rel='stylesheet' href='style.css'>
 </head>
 <body>
     <div class='container'>
         <p>To transform your tabs to other key enter your tabs here:</p>
         <textarea cols="30" rows="4"></textarea>
-        <p>P.S. You can write either "do" or "C", register doesn't matter, enter keys WITHOUT any commas, just using space.
-            To specify tabs (sharp or flat) use "+" and "-".</p>
+        <p>P.S. You can write either "Do" or "C", register doesn't matter.
+            To specify tabs (sharp or flat) use "+" and "-".
+        The app supports 3 octaves: 3, 4, 5. If not specified, it will be the 4th one.
+        Example of input: <br>"Do C, F3, a- sol+"
+        </p>
         <p>Now choose the origin key and to what key you want to change the melody</p>
         <span>from</span>
         <select name="keyfrom" id="keyfrom">
-            <option value="c">C</option>
-            <option value="g">G</option>
-            <option value="d">D</option>
-            <option value="a">A</option>
-            <option value="e">E</option>
-            <option value="b">B</option>
-            <option value="f+">F#</option>
-            <option value="g-">G&#9837</option>
-            <option value="d-">D&#9837</option>
-            <option value="a-">A&#9837</option>
-            <option value="e-">E&#9837</option>
-            <option value="b-">B&#9837</option>
-            <option value="f">F</option>
+            <option value="c4">C</option>
+            <option value="g4">G</option>
+            <option value="d4">D</option>
+            <option value="a4">A</option>
+            <option value="e4">E</option>
+            <option value="b4">B</option>
+            <option value="f+4">F#</option>
+            <option value="g-4">G&#9837</option>
+            <option value="d-4">D&#9837</option>
+            <option value="a-4">A&#9837</option>
+            <option value="e-4">E&#9837</option>
+            <option value="b-4">B&#9837</option>
+            <option value="f4">F</option>
         </select>
         <span>to</span>
         <select name="keyto" id="keyto">
-            <option value="c">C</option>
-            <option value="g">G</option>
-            <option value="d">D</option>
-            <option value="a">A</option>
-            <option value="e">E</option>
-            <option value="b">B</option>
-            <option value="f+">F#</option>
-            <option value="g-">G&#9837</option>
-            <option value="d-">D&#9837</option>
-            <option value="a-">A&#9837</option>
-            <option value="e-">E&#9837</option>
-            <option value="b-">B&#9837</option>
-            <option value="f">F</option>
+            <option value="c4">C</option>
+            <option value="g4">G</option>
+            <option value="d4">D</option>
+            <option value="a4">A</option>
+            <option value="e4">E</option>
+            <option value="b4">B</option>
+            <option value="f+4">F#</option>
+            <option value="g-4">G&#9837</option>
+            <option value="d-4">D&#9837</option>
+            <option value="a-4">A&#9837</option>
+            <option value="e-4">E&#9837</option>
+            <option value="b-4">B&#9837</option>
+            <option value="f4">F</option>
         </select><br>
         <button id='convert'>Convert</button>
-        <p id='answer'>do re mi</p>
+        <p id='answer'></p>
         <button id="copybtn">Copy to cliboard</button>
     </div>
 

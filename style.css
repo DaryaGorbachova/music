@@ -25,7 +25,6 @@ textarea {
 #answer {
     display: none;
     background-color: white;
-    max-width: 800px;
     border: solid 3px var(--grey);
     border-radius: 12px;
 }
@@ -39,7 +38,7 @@ select {
 }
 
 button {
-    margin: 32px;
+    margin: 32px auto;
     background-color: azure;    
     padding: 10px 30px;
     font: bold 18px 'Times New Roman';  
