@@ -74,9 +74,9 @@ if (plus + j < 0) {
     }  
             
 }
- console.log(plus)  
+ 
 }
-
+copybtn.innerHTML = 'Copy to cliboard';
 }
 
 function normalize() {
@@ -89,7 +89,9 @@ function normalize() {
         if (text[i] === ',') {
             if (text[i- 1]  !== ',' && text[i- 1]  !== '3' && text[i- 1]  !== '4' && text[i- 1]  !== '5') tab += '4';
             
-        }
+        } else if (text[i] === '♯' ||text[i] === '#') tab += '+'
+        else if (text[i] === '~') continue
+        else if (text[i] === '♭') tab += '-'
         else if (text[i] !== ' ') tab += text[i].toLowerCase();
         else if (text[i] === ' ') {
 
