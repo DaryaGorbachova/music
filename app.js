@@ -91,7 +91,7 @@ function clear () {
 
 function write () {
     answer.style.display = 'block';
-    convertbtn.style.display = 'block';
+    copybtn.style.display = 'block';
     for (let i = 0; i < output.length; i++) {
        if (output[i] == '-') {
            final += '&#9837';
