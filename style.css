@@ -23,6 +23,7 @@ textarea {
 }
 
 #answer {
+    display: none;
     background-color: white;
     max-width: 800px;
     border: solid 3px var(--grey);
@@ -49,4 +50,8 @@ button {
 
 button:hover {
     background-color: rgb(190, 236, 250);
+}
+
+#copybtn {
+    display: none;
 }

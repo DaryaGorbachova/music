@@ -17,6 +17,10 @@ const minor = ['c', 'd-', 'd', 'e-', 'e', 'f', 'g-', 'g', 'a-', 'a', 'b-', 'b'];
 
 convertbtn.addEventListener('click', () => {
     clear();
+    if (tabsBefore.value.length < 1) {
+        alert('Write your tabs first!')
+        return false;
+    }
     normalize();
     convert();
     write();
@@ -37,7 +41,7 @@ for (let i = 0; i < major.length; i++) {
     if (to.value == major[i] || to.value == minor[i]) end = i;
 }
 gap = end - begin;
-console.log('gap', gap)
+console.log(begin, end)
 let plus = 0;
 
 for (let i = 0; i < input.length; i++) {
@@ -59,13 +63,13 @@ if (plus < 0) {
     }  
             
 }
-
-console.log(plus)    
+ console.log(plus)  
 }
-console.log(output);
+
 }
 
 function normalize() {
+
     let tab = '';
     let text = tabsBefore.value;
     if (text.slice(-1) !== ' ') text += ' ';
@@ -86,6 +90,8 @@ function clear () {
 }
 
 function write () {
+    answer.style.display = 'block';
+    convertbtn.style.display = 'block';
     for (let i = 0; i < output.length; i++) {
        if (output[i] == '-') {
            final += '&#9837';
@@ -106,6 +112,13 @@ function write () {
     answer.innerHTML = final;
 }
 
-function copy () {
-
+function copy(id)
+{
+var r = document.createRange();
+r.selectNode(answer);
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(r);
+document.execCommand('copy');
+window.getSelection().removeAllRanges();
+copybtn.innerHTML = 'Copied!'
 }
