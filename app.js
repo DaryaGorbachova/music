@@ -39,6 +39,19 @@ copybtn.addEventListener('click', () => {
     copy();
 })
 
+document.onkeypress = function (keypressed) {
+    if (keypressed.key === 'Enter') {
+        clear();
+        if (tabsBefore.value.length < 1) {
+            alert('Write your tabs first!')
+            return false;
+        }
+        normalize();
+        convert();
+        write(); 
+    };
+}
+
 function convert() {
 let gap = 0;
 let begin = 0;
@@ -50,7 +63,7 @@ for (let i = 0; i < major.length; i++) {
     if (to.value == major[i] || to.value == minor[i]) end = i;
 }
 gap = end - begin;
-console.log(begin, end)
+
 let plus = 0;
 let octava = '4';
 
@@ -84,7 +97,7 @@ function normalize() {
     let tab = '';
     let text = tabsBefore.value;
     if (text.slice(-1) !== ' ') text += ' ';
-    console.log(text.code)
+
     for (let i = 0; i < text.length; i++) {
         if (text[i] === ',') {
             if (text[i- 1]  !== ',' && text[i- 1]  !== '3' && text[i- 1]  !== '4' && text[i- 1]  !== '5') tab += '4';
@@ -126,7 +139,7 @@ function write () {
         }
         else final += output[i];
     }
-    final = final.slice(1)
+    final = final.slice(1);
     console.log(final);
     answer.innerHTML = final;
 }
