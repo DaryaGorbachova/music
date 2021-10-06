@@ -65,9 +65,10 @@ for (let i = 0; i < major.length; i++) {
 gap = end - begin;
 
 let plus = 0;
-let octava = '4';
 
 for (let i = 0; i < input.length; i++) {
+    if (input[i] === '/') output += '/'
+    else if (input[i] === '//') output += '//'
     for (let j = 0; j < major.length; j++) {
         plus = j + gap;
         plus = plus % major.length;
@@ -100,15 +101,16 @@ function normalize() {
 
     for (let i = 0; i < text.length; i++) {
         if (text[i] === ',') {
-            if (text[i- 1]  !== ',' && text[i- 1]  !== '3' && text[i- 1]  !== '4' && text[i- 1]  !== '5') tab += '4';
+            if (text[i- 1]  !== ',' && text[i- 1]  !== '3' && text[i- 1]  !== '4' && text[i- 1]  !== '5' && text[i - 1] !== '/') tab += '4';
             
         } else if (text[i] === '♯' ||text[i] === '#') tab += '+'
-        else if (text[i] === '~') continue
-        else if (text[i] === '♭') tab += '-'
+        else if (text[i] === '~') continue;
+        else if (text[i] === '/') tab += '/';
+        else if (text[i] === '♭') tab += '-';
         else if (text[i] !== ' ') tab += text[i].toLowerCase();
         else if (text[i] === ' ') {
 
-            if (text[i- 1]  !== ',' && text[i- 1]  !== '3' && text[i- 1]  !== '4' && text[i- 1]  !== '5') tab += '4';
+            if (text[i- 1]  !== ',' && text[i- 1]  !== '3' && text[i- 1]  !== '4' && text[i- 1]  !== '5'  && text[i - 1] !== '/') tab += '4';
             input.push(tab);
             tab = '';
         }
